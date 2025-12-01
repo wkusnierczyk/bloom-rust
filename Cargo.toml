@@ -1,0 +1,12 @@
+[package]
+name = "bloom"
+version = "0.1.0"
+edition = "2021"
+description = "A space and time efficient Bloom Filter implementation in Rust."
+authors = ["Your Name <wacus@pm.me>"]
+license = "MIT"
+repository = "https://github.com/username/bloom_efficient"
+
+[dependencies]
+# No external dependencies required for the core logic to keep it lightweight.
+# The standard library's hashing is used.
