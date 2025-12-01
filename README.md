@@ -2,6 +2,9 @@
 
 A high-performance, memory-efficient Bloom Filter implementation in Rust.
 
+![test workflow]
+(https://github.com/wkusnierczyk/bloom-rust/actions/workflows/test.yml/badge.svg)
+
 ## What is a Bloom Filter?
 
 A **Bloom Filter** is a space-efficient probabilistic data structure used to test whether an item is a member of a set.
