@@ -170,3 +170,6 @@ a modern CPU (Apple M1) across a few different input configurations.
 soon as it encounters the first `0` bit, whereas insert and lookup of seen items must set or check, respectively, all
 $k$ bits.
 
+## Contributions
+
+Please feel free to open an issue or submit a pull request.
