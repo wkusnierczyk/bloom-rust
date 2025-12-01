@@ -97,7 +97,7 @@ impl<T: ?Sized + Hash> BloomFilter<T> {
                     "False positive rate must be between 0.0 and 1.0, exclusive."
                 );
                 // m = - (n * ln(p)) / (ln(2)^2)
-                let numerator = - (expected_items as f64) * p.ln();
+                let numerator = -(expected_items as f64) * p.ln();
                 let denominator = ln2 * ln2;
                 let m = (numerator / denominator).ceil() as u64;
 
