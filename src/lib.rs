@@ -92,7 +92,10 @@ impl<T: ?Sized + Hash> BloomFilter<T> {
 
         let (m, k) = match params {
             FilterParams::FalsePositiveRate(p) => {
-                assert!(p > 0.0 && p < 1.0, "False positive rate must be between 0.0 and 1.0, exclusive.");
+                assert!(
+                    p > 0.0 && p < 1.0,
+                    "False positive rate must be between 0.0 and 1.0, exclusive."
+                );
                 // m = - (n * ln(p)) / (ln(2)^2)
                 let numerator = -1.0 * (expected_items as f64) * p.ln();
                 let denominator = ln2 * ln2;
@@ -101,7 +104,7 @@ impl<T: ?Sized + Hash> BloomFilter<T> {
                 // k = (m / n) * ln(2)
                 let k = ((m as f64 / expected_items as f64) * ln2).ceil() as u32;
                 (m, k)
-            },
+            }
             FilterParams::HashCount(k) => {
                 assert!(k > 0, "Hash count must be greater than 0.");
                 // If k is fixed, assume optimal fill rate (50%), where p = 2^-k.
@@ -199,7 +202,6 @@ impl<T: ?Sized + Hash> BloomFilter<T> {
     pub fn hash_count(&self) -> u32 {
         self.hash_fn_count
     }
-
 }
 
 #[cfg(test)]
@@ -251,12 +253,18 @@ mod tests {
         }
 
         let mut bf = BloomFilter::new(10, 0.01);
-        let user = User { id: 1, name: "Alyssa P. Hacker".to_string() };
+        let user = User {
+            id: 1,
+            name: "Alyssa P. Hacker".to_string(),
+        };
 
         bf.insert(&user);
         assert!(bf.contains(&user));
 
-        let other_user = User { id: 2, name: "Eva Lu Ator".to_string() };
+        let other_user = User {
+            id: 2,
+            name: "Eva Lu Ator".to_string(),
+        };
         assert!(!bf.contains(&other_user));
     }
 

@@ -37,7 +37,10 @@ fn main() {
     // We check numbers outside the inserted range.
     let check_range_start = expected_elements;
     let check_range_end = expected_elements + 10_000;
-    println!("Checking range {} to {} for false positives...", check_range_start, check_range_end);
+    println!(
+        "Checking range {} to {} for false positives...",
+        check_range_start, check_range_end
+    );
 
     let mut fp_count = 0;
     for i in check_range_start..check_range_end {
@@ -48,5 +51,8 @@ fn main() {
 
     let actual_fp_rate = fp_count as f64 / 10_000.0;
     println!("False Positives found: {}", fp_count);
-    println!("Actual FP Rate: {:.4} (Target: {})", actual_fp_rate, actual_fp_rate);
+    println!(
+        "Actual FP Rate: {:.4} (Target: {})",
+        actual_fp_rate, actual_fp_rate
+    );
 }

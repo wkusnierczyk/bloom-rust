@@ -31,7 +31,6 @@ fn main() {
 }
 
 fn run_benchmark(n: usize, fp_rate: f64) {
-
     // --- Setup ---
     let mut bf = BloomFilter::new(n, fp_rate);
     let mut rng = Random::new(12345);
@@ -53,8 +52,14 @@ fn run_benchmark(n: usize, fp_rate: f64) {
     let memory_bytes = bf.memory_usage_bytes();
     let memory_mb = memory_bytes as f64 / ki / ki;
     println!("\n[Memory Usage]");
-    println!("Bit Vector Size: {:.2} MB ({} bytes)", memory_mb, memory_bytes);
-    println!("Bits per item: {:.2} bits", (memory_bytes * 8) as f64 / n as f64);
+    println!(
+        "Bit Vector Size: {:.2} MB ({} bytes)",
+        memory_mb, memory_bytes
+    );
+    println!(
+        "Bits per item: {:.2} bits",
+        (memory_bytes * 8) as f64 / n as f64
+    );
 
     // --- Metric 2: Insert Performance ---
     println!("\n[Insertion Performance]");
@@ -115,5 +120,10 @@ fn print_timing(label: &str, total_duration: Duration, iterations: usize) {
     let ns_per_op = total_ns / iterations as f64;
     let ops_per_sec = 1_000_000_000.0 / ns_per_op;
 
-    println!("{:<20}: {:.2} ns/op | {:.2} million ops/sec", label, ns_per_op, ops_per_sec / 1_000_000.0);
+    println!(
+        "{:<20}: {:.2} ns/op | {:.2} million ops/sec",
+        label,
+        ns_per_op,
+        ops_per_sec / 1_000_000.0
+    );
 }
