@@ -27,7 +27,7 @@ fn main() {
     // Run a few benchmark configurations
     run_benchmark(1_000_000, 0.000_1);
     run_benchmark(1_000_000, 0.000_000_000_1);
-    run_benchmark(100_000_000, 0.000_000_000_000_1);
+    // run_benchmark(100_000_000, 0.000_000_000_000_1);
 }
 
 fn run_benchmark(n: usize, fp_rate: f64) {
