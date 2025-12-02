@@ -6,6 +6,9 @@ description = "A space and time efficient Bloom Filter implementation in Rust."
 authors = ["Waclaw Kusnierczyk <wacus@pm.me>"]
 license = "MIT"
 repository = "https://github.com/wkusnierczyk/bloom-rust"
+exclude = [
+    ".github/*"
+]
 
 [dependencies]
 # No external dependencies required for the core logic to keep it lightweight.
