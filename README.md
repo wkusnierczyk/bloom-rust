@@ -134,28 +134,24 @@ cargo run --release --example benchmark
 Example output:
 
 ```bash
+==========================================
 --- Bloom Filter Performance Benchmark ---
-Items:          1000000
-Target FP Rate: 0.0000000001
-Hash Count:     34
+Items:          100000000
+Target FP Rate: 0.0000000000001
+Hash Count:     44
 ------------------------------------------
-
-
 [Memory Usage]
-Bit Vector Size: 5.71 MB (5990664 bytes)
-Bits per item: 47.93 bits
-
+Bit Vector Size: 742.71 MB (778786000 bytes)
+Bits per item: 62.30 bits
 [Insertion Performance]
-Insert              : 144.31 ns/op | 6.93 million ops/sec
-
+Insert              : 593.58 ns/op | 1.68 million ops/sec
 [Lookup Performance - Worst Case (Seen Items)]
-Contains (Seen)     : 119.43 ns/op | 8.37 million ops/sec
-
+Contains (Seen)     : 518.95 ns/op | 1.93 million ops/sec
 [Lookup Performance - Average Case (Unseen Items)]
-Contains (Unseen)   : 72.16 ns/op | 13.86 million ops/sec
-
+Contains (Unseen)   : 206.30 ns/op | 4.85 million ops/sec
 [Lookup Performance - Best Case (Empty Filter)]
-Contains (Empty)    : 42.14 ns/op | 23.73 million ops/sec
+Contains (Empty)    : 43.62 ns/op | 22.93 million ops/sec
+==========================================
 ```
 
 The performance depends on CPU speed and cache availability. Below are illustrative results from benchmark runs on
