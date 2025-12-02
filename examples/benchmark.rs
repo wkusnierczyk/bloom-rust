@@ -53,11 +53,12 @@ fn run_benchmark(n: usize, fp_rate: f64) {
     let memory_mb = memory_bytes as f64 / ki / ki;
     println!("\n[Memory Usage]");
     println!(
-        "Bit Vector Size: {:.2} MB ({} bytes)",
-        memory_mb, memory_bytes
+        "{:<22}{:.2} MB ({} bytes)",
+        "Bit Vector Size", memory_mb, memory_bytes
     );
     println!(
-        "Bits per item: {:.2} bits",
+        "{:<22}{:.2} bits",
+        "Bits per item",
         (memory_bytes * 8) as f64 / n as f64
     );
 
@@ -68,7 +69,7 @@ fn run_benchmark(n: usize, fp_rate: f64) {
         bf.insert(item);
     }
     let duration_insert = start_insert.elapsed();
-    print_timing("Insert", duration_insert, n);
+    print_timing(duration_insert, n);
 
     // --- Metric 3: Worst Case Lookup (Seen Items) ---
     // The worst case for Bloom Filter is when the item has been seen before.
@@ -80,7 +81,7 @@ fn run_benchmark(n: usize, fp_rate: f64) {
         let _ = std::hint::black_box(bf.contains(item));
     }
     let duration_worst = start_worst.elapsed();
-    print_timing("Contains (Seen)", duration_worst, n);
+    print_timing(duration_worst, n);
 
     // --- Metric 4: Average Case Lookup (Unseen Items) ---
     // In a well-tuned Bloom Filter (50% bits set), an unseen item
@@ -98,7 +99,7 @@ fn run_benchmark(n: usize, fp_rate: f64) {
         let _ = std::hint::black_box(bf.contains(item));
     }
     let duration_avg = start_avg.elapsed();
-    print_timing("Contains (Unseen)", duration_avg, n);
+    print_timing(duration_avg, n);
 
     // --- Metric 5: Best Case Lookup (Empty Filter) ---
     // The best case is checking against an empty filter; fails on the 1st bit.
@@ -110,19 +111,18 @@ fn run_benchmark(n: usize, fp_rate: f64) {
         let _ = std::hint::black_box(empty_bf.contains(item));
     }
     let duration_best = start_best.elapsed();
-    print_timing("Contains (Empty)", duration_best, n);
+    print_timing(duration_best, n);
 
     println!("\n==========================================\n");
 }
 
-fn print_timing(label: &str, total_duration: Duration, iterations: usize) {
+fn print_timing(total_duration: Duration, iterations: usize) {
     let total_ns = total_duration.as_nanos() as f64;
     let ns_per_op = total_ns / iterations as f64;
     let ops_per_sec = 1_000_000_000.0 / ns_per_op;
 
     println!(
-        "{:<20}: {:.2} ns/op | {:.2} million ops/sec",
-        label,
+        "                      {:.2} ns/op | {:.2} million ops/sec",
         ns_per_op,
         ops_per_sec / 1_000_000.0
     );
