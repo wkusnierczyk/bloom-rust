@@ -36,9 +36,9 @@ fn run_benchmark(n: usize, fp_rate: f64) {
     let mut rng = Random::new(12345);
 
     println!("\n---------- Bloom Filter Performance Benchmark -----------\n");
-    println!("Items:          {}", n);
-    println!("Target FP Rate: {}", fp_rate);
-    println!("Hash Count:     {}", bf.hash_count());
+    println!("{:<22}{}", "Items", n);
+    println!("{:<22}{}", "Target FP Rate", fp_rate);
+    println!("{:<22}{}", "Hash Count", bf.hash_count());
     println!("\n---------------------------------------------------------\n");
 
     // Generate data
