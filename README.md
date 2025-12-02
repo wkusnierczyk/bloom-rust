@@ -1,6 +1,7 @@
 # Bloom Filter
 
-A high-performance, memory-efficient Bloom Filter implementation in Rust.
+A high-performance, memory-efficient Bloom Filter implementation in Rust.  
+Get directly from [crates.io](https://crates.io/crates/bloomlib).
 
 ## What is a Bloom Filter?
 
@@ -133,7 +134,6 @@ cargo run --release --example benchmark
 Example output:
 
 ```bash
-==========================================
 --- Bloom Filter Performance Benchmark ---
 Items:          100000000
 Target FP Rate: 0.0000000000001
@@ -151,7 +151,6 @@ Bits per item         62.30 bits
                       206.30 ns/op | 4.85 million ops/sec
 [Lookup Performance - Best Case (Empty Filter)]
                       43.62 ns/op | 22.93 million ops/sec
-==========================================
 ```
 
 The performance depends on CPU speed and cache availability. 

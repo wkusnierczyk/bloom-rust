@@ -35,11 +35,11 @@ fn run_benchmark(n: usize, fp_rate: f64) {
     let mut bf = BloomFilter::new(n, fp_rate);
     let mut rng = Random::new(12345);
 
-    println!("--- Bloom Filter Performance Benchmark ---");
+    println!("\n---------- Bloom Filter Performance Benchmark -----------\n");
     println!("Items:          {}", n);
     println!("Target FP Rate: {}", fp_rate);
     println!("Hash Count:     {}", bf.hash_count());
-    println!("------------------------------------------\n");
+    println!("\n---------------------------------------------------------\n");
 
     // Generate data
     let mut dataset = Vec::with_capacity(n);
@@ -51,7 +51,7 @@ fn run_benchmark(n: usize, fp_rate: f64) {
     let ki = 1024.0;
     let memory_bytes = bf.memory_usage_bytes();
     let memory_mb = memory_bytes as f64 / ki / ki;
-    println!("\n[Memory Usage]");
+    println!("[Memory Usage]");
     println!(
         "{:<22}{:.2} MB ({} bytes)",
         "Bit Vector Size", memory_mb, memory_bytes
@@ -113,7 +113,7 @@ fn run_benchmark(n: usize, fp_rate: f64) {
     let duration_best = start_best.elapsed();
     print_timing(duration_best, n);
 
-    println!("\n==========================================\n");
+    println!("\n=========================================================\n");
 }
 
 fn print_timing(total_duration: Duration, iterations: usize) {
