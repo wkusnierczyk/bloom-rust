@@ -136,9 +136,9 @@ Example output:
 ```bash
 ---------- Bloom Filter Performance Benchmark -----------
 
-Items:          100000000
-Target FP Rate: 0.0000000000001
-Hash Count:     44
+Items                100000000
+Target FP Rate       0.0000000000001
+Hash Count           44
 
 ---------------------------------------------------------
 
