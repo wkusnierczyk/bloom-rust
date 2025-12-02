@@ -134,34 +134,26 @@ cargo run --release --example benchmark
 Example output:
 
 ```bash
-==========================================
 --- Bloom Filter Performance Benchmark ---
 Items:          100000000
 Target FP Rate: 0.0000000000001
 Hash Count:     44
 ------------------------------------------
 [Memory Usage]
-Bit Vector Size: 742.71 MB (778786000 bytes)
-Bits per item: 62.30 bits
+Bit Vector Size       742.71 MB (778786000 bytes)
+Bits per item         62.30 bits
+
 [Insertion Performance]
-Insert              : 593.58 ns/op | 1.68 million ops/sec
+                      593.58 ns/op | 1.68 million ops/sec
 [Lookup Performance - Worst Case (Seen Items)]
-Contains (Seen)     : 518.95 ns/op | 1.93 million ops/sec
+                      518.95 ns/op | 1.93 million ops/sec
 [Lookup Performance - Average Case (Unseen Items)]
-Contains (Unseen)   : 206.30 ns/op | 4.85 million ops/sec
+                      206.30 ns/op | 4.85 million ops/sec
 [Lookup Performance - Best Case (Empty Filter)]
-Contains (Empty)    : 43.62 ns/op | 22.93 million ops/sec
-==========================================
+                      43.62 ns/op | 22.93 million ops/sec
 ```
 
-The performance depends on CPU speed and cache availability. Below are illustrative results from benchmark runs on
-a modern CPU (Apple M1) across a few different input configurations.
-
-|       Items | Hashes (k) | False Positive Rate |    Memory | Insert Time | Lookup Time (seen) | Lookup Time (unseen) | Lookup Time (empty) |
-|------------:|-----------:|--------------------:|----------:|------------:|-------------------:|---------------------:|--------------------:|
-|   1,000,000 |         14 |             0.000,1 |   2.29 MB |   ~95 ns/op |           82 ns/op |            ~68 ns/op |           ~36 ns/op |
-|   1,000,000 |         34 |     0.000,000,000,1 |   5.71 MB |  ~144 ns/op |         ~119 ns/op |            ~72 ns/op |           ~42 ns/op |
-| 100,000,000 |         44 | 0.000,000,000,000,1 | 742.71 MB |  ~528 ns/op |         ~407 ns/op |           ~197 ns/op |          ~109 ns/op | 
+The performance depends on CPU speed and cache availability. 
 
 **Note**: Lookup of unseen items is faster than insert and lookup of seen items because the filter can return `false` as
 soon as it encounters the first `0` bit, whereas insert and lookup of seen items must set or check, respectively, all
