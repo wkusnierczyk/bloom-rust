@@ -12,6 +12,7 @@ jobs:
   publish:
     name: Publish to crates.io
     runs-on: ubuntu-latest
+    environment: crates
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
