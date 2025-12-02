@@ -53,7 +53,7 @@ It focuses on two main optimizations:
 Import the struct `BloomFilter` from the `bloom` library:
 
 ```rust
-use bloom::BloomFilter;
+use bloomlib::BloomFilter;
 ```
 
 Below is an example of using the Bloom filter.

@@ -61,7 +61,7 @@ impl<T: ?Sized + Hash> BloomFilter<T> {
     /// # Examples
     ///
     /// ```
-    /// use bloom::BloomFilter;
+    /// use bloomlib::BloomFilter;
     ///
     /// // Initialize with a desired false positive rate
     /// let mut bf1: BloomFilter<str> = BloomFilter::new(1000, 0.01);

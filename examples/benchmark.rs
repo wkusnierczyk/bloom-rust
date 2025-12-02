@@ -1,4 +1,4 @@
-use bloom::BloomFilter;
+use bloomlib::BloomFilter;
 use std::time::{Duration, Instant};
 
 /// A simple Xorshift pseudo-random number generator.

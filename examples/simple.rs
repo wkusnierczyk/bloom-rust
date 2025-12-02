@@ -1,4 +1,4 @@
-use bloom::BloomFilter;
+use bloomlib::BloomFilter;
 
 fn main() {
     // Configuration

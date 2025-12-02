@@ -1,11 +1,11 @@
 [package]
-name = "bloom"
+name = "bloomlib"
 version = "0.1.0"
 edition = "2021"
 description = "A space and time efficient Bloom Filter implementation in Rust."
-authors = ["Your Name <wacus@pm.me>"]
+authors = ["Waclaw Kusnierczyk <wacus@pm.me>"]
 license = "MIT"
-repository = "https://github.com/username/bloom_efficient"
+repository = "https://github.com/wkusnierczyk/bloom-rust"
 
 [dependencies]
 # No external dependencies required for the core logic to keep it lightweight.
