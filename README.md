@@ -134,11 +134,14 @@ cargo run --release --example benchmark
 Example output:
 
 ```bash
---- Bloom Filter Performance Benchmark ---
+---------- Bloom Filter Performance Benchmark -----------
+
 Items:          100000000
 Target FP Rate: 0.0000000000001
 Hash Count:     44
-------------------------------------------
+
+---------------------------------------------------------
+
 [Memory Usage]
 Bit Vector Size       742.71 MB (778786000 bytes)
 Bits per item         62.30 bits
