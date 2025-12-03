@@ -31,7 +31,7 @@ Note that:
 
 ## Implementation Details
 
-This implementation provides the Bloom Filter as a rust library, `bloom`.
+This implementation provides the Bloom Filter as a rust library, `bloomlib`.
 It focuses on two main optimizations:
 
 1. **Memory efficiency**:
@@ -53,7 +53,7 @@ It focuses on two main optimizations:
 
 ## Usage
 
-Import the struct `BloomFilter` from the `bloom` library:
+Import the struct `BloomFilter` from the `bloomlib` library:
 
 ```rust
 use bloomlib::BloomFilter;
