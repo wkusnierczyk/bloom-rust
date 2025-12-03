@@ -5,6 +5,8 @@ Get directly from [crates.io](https://crates.io/crates/bloomlib).
 
 ## What is a Bloom Filter?
 
+![image](graphics/bloom-filter-graphic-small.png)
+
 A **Bloom Filter** is a space-efficient probabilistic data structure used to test whether an item is a member of a set.
 It is designed to rapidly and memory-efficiently check whether an item is **definitely not in** the set or
 **possibly in** the set.
