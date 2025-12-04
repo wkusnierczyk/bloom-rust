@@ -3,6 +3,8 @@
 A high-performance, memory-efficient Bloom Filter implementation in Rust.  
 Get directly from [crates.io](https://crates.io/crates/bloomlib).
 
+See `bloomsrv` at [github.com](https://github.com/wkusnierczyk/bloomserv) and [crates.io](https://crates.io/crates/bloomsrv) for `bloomlib` wrapped into a REST API, providing a language-agnostic service allowing users to create and query multiple bloom filters   
+
 ## What is a Bloom Filter?
 
 ![image](graphics/bloom-filter-graphic-small.png)
