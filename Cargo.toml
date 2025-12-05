@@ -1,6 +1,6 @@
 [package]
 name = "bloomlib"
-version = "0.1.4"
+version = "0.1.5"
 edition = "2021"
 description = "A space and time efficient Bloom Filter implementation in Rust."
 authors = ["Waclaw Kusnierczyk <wacus@pm.me>"]
