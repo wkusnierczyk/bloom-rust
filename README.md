@@ -1,4 +1,4 @@
-# Bloom Filter
+# bloomlib
 
 A high-performance, memory-efficient Bloom Filter implementation in Rust.  
 Get directly from [crates.io](https://crates.io/crates/bloomlib).
